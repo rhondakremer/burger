@@ -3,8 +3,12 @@
 <p>Eat burgers with this app</p>
 
 <!-- Pass in data from server.js -->
+READY TO EAT
 <ul>
   {{#each burgers}}
+  {{#unless devoured}}
+    
+
   	<li>
   		<p><span class="label">ID:</span> {{this.id}}</p>
       <p><span class="label">Quote:</span> {{this.burger_name}}</p>
@@ -14,6 +18,26 @@
 
       <a href="/{{this.id}}">Update this quote</a>
   	</li>
+        {{/unless}}
+  {{/each}}
+</ul>
+
+EATEN
+<ul>
+  {{#each burgers}}
+  {{#if devoured}}
+    
+
+  	<li>
+  		<p><span class="label">ID:</span> {{this.id}}</p>
+      <p><span class="label">Quote:</span> {{this.burger_name}}</p>
+      <p><span class="label">Author:</span> {{this.devoured}}</p>
+
+      <button data-id="{{this.id}}" class="devour">Devour</button>
+
+      <a href="/{{this.id}}">Update this quote</a>
+  	</li>
+        {{/if}}
   {{/each}}
 </ul>
 
