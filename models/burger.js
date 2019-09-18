@@ -1,13 +1,23 @@
-var orm = require("./config/orm.js");
+var orm = require("../config/orm.js");
 
+var burger = {
+  all: function(cb) {
+    orm.all("burgers", function(res) {
+      cb(res);
+    });
+  },
+  // The variables cols and vals are arrays.
+  create: function(cols, vals, cb) {
+    orm.create("burgers", cols, vals, function(res) {
+      cb(res);
+    });
+  },
+  update: function(objColVals, condition, cb) {
+    orm.update("cats", objColVals, condition, function(res) {
+      cb(res);
+    });
+  }
+};
 
-// Console log all the burgers
-orm.selectAll("burgers");
-
-// Console log all the client_name's.
-//orm.insertOne("client_name", "clients");
-
-// Console log all the parties that have a party-type of grown-up.
-//orm.updateOne("parties", "party_type", "grown-up");
-
-module.exports = burgerJS;
+// Export the database functions for the controller (catsController.js).
+module.exports = burger;
