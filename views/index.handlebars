@@ -4,23 +4,21 @@
 
 <!-- Pass in data from server.js -->
 READY TO EAT
-<ul>
+<table>
   {{#each burgers}}
   {{#unless devoured}}
     
 
-  	<li>
-  		<p><span class="label">ID:</span> {{this.id}}</p>
-      <p><span class="label">Quote:</span> {{this.burger_name}}</p>
-      <p><span class="label">Author:</span> {{this.devoured}}</p>
+
+      <tr><td>{{this.burger_name}}
 
       <button data-id="{{this.id}}" class="devour">Devour</button>
 
       <a href="/{{this.id}}">Update this quote</a>
-  	</li>
+  	</td></tr>
         {{/unless}}
   {{/each}}
-</ul>
+</table>
 
 EATEN
 <ul>
