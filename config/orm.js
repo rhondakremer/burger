@@ -29,23 +29,23 @@ var orm = {
     var queryString = "SELECT * FROM ??;";
     connection.query(queryString, [tableName], function(err, result) {
       if (err) throw err;
-      console.log(result);
+      //console.log(result);
       callback(result)
     });
   },
 
-    /*
-  insertOne: function(tableName, column1, column2, column1Value) {
-    var queryString = "INSERT INTO ?? (??, ??) VALUES (?, false);";
+  
+  insertOne: function(tableName, column1, column2, column1Value, column2Value, cb) {
+    var queryString = "INSERT INTO ?? (??, ??) VALUES (?, ?);";
 
     console.log(queryString);
 
-    connection.query(queryString, [tableName, column1, column2, column1Value], function(err, result) {
+    connection.query(queryString, [tableName, column1, column2, column1Value, column2Value], function(err, result) {
       if (err) throw err;
-      console.log(result);
+      cb(result);
     });
   },
-
+  /*
 updateOne: function(whatToSelect, tableOne, tableTwo, onTableOneCol, onTableTwoCol) {
     var queryString = 
 
