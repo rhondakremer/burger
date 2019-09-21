@@ -45,20 +45,20 @@ var orm = {
       cb(result);
     });
   },
-  /*
-updateOne: function(whatToSelect, tableOne, tableTwo, onTableOneCol, onTableTwoCol) {
-    var queryString = 
+  
+updateOne: function(tableName, devouredColumn, devouredState, burgerID) {
+    var queryString = "UPDATE ?? SET ?? = ? WHERE id=?";
 
     console.log(queryString);
 
-    connection.query(queryString, [whatToSelect, tableOne, tableTwo, onTableOneCol, onTableTwoCol], function(
+    connection.query(queryString, [tableName, devouredColumn, devouredState, burgerID], function(
       err,
       result
     ) {
       if (err) throw err;
       console.log(result);
     });
-  }*/
+  }
 };
 
 module.exports = orm;

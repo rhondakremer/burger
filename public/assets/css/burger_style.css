@@ -2,8 +2,25 @@ body {
     background: plum;
 }
 
+#coolburger {
+    width: 20%;
+    float: right;
+    margin-top: -25px;
 
+}
 
 td {
     border: black 1px solid;
 }
+
+#tables {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#uneaten, #eaten {
+    padding: 40px;
+}
+
+

@@ -1,53 +1,57 @@
-<h1>Burgers App</h1>
-
-<p>Eat burgers with this app</p>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+     <img src="http://66.media.tumblr.com/tumblr_m8q0lce8wB1qadtd9o1_500.png" id="coolburger">
+    <h1 class="display-4">Eat-Da-Burger</h1>
+   
+    <p class="lead">... and enjoy</p>
+    
+  </div>
+</div>
 
 <!-- Pass in data from server.js -->
+<div id="tables">
+  <div id="uneaten">
 READY TO EAT
-<table>
+<table id="table1">
   {{#each burgers}}
   {{#unless devoured}}
-    
 
-
-      <tr><td>{{this.burger_name}}
-
+  <tr>
+    <td>{{this.burger_name}}
       <button data-id="{{this.id}}" class="devour">Devour</button>
-
-      <a href="/{{this.id}}">Update this quote</a>
-  	</td></tr>
-        {{/unless}}
+    </td>
+  </tr>
+  {{/unless}}
   {{/each}}
 </table>
-
+</div>
+<div id="eaten">
 EATEN
-<ul>
+<table id="table2">
   {{#each burgers}}
   {{#if devoured}}
-    
 
-  	<li>
-  		<p><span class="label">ID:</span> {{this.id}}</p>
-      <p><span class="label">Quote:</span> {{this.burger_name}}</p>
-      <p><span class="label">Author:</span> {{this.devoured}}</p>
-
+  <tr>
+    <td>{{this.burger_name}}
       <button data-id="{{this.id}}" class="devour">Devour</button>
-
-      <a href="/{{this.id}}">Update this quote</a>
-  	</li>
-        {{/if}}
+    </td>
+  </tr>
+  {{/if}}
   {{/each}}
-</ul>
+</table>
+</div>
+</div>
+  <h2>Don't like my burgers??</h2>
+  <h3>Add your own</h3>
 
-<h2>Add a Burger</h2>
-
-<form class="create-form">
+  <form class="create-form">
 
 
-  <div class="form-group">
-    <label for="name">Quote:</label>
-    <textarea id="name" name="name" rows="8" cols="40"></textarea>
-  </div>
+    <div class="form-group">
+      <label for="name">Describe your dream burger and click Add Burger to make it a reality</label>
+      <br>
+      <textarea id="name" name="name" rows="8" cols="40"></textarea>
+    </div>
 
-  <button type="submit" id="submit-btn">Add Burger</button>
-</form>
+    <button type="submit" id="submit-btn">Add Burger</button>
+  </form>
