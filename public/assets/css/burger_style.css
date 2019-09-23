@@ -1,12 +1,12 @@
 body {
     background: plum;
+    margin: 10px;
 }
 
 #coolburger {
-    width: 20%;
     float: right;
     margin-top: -25px;
-
+    width: 35%;
 }
 
 td {
@@ -20,7 +20,10 @@ td {
 }
 
 #uneaten, #eaten {
-    padding: 40px;
+    padding: 20px;
 }
 
+button {
+    border-radius: 2px;
+}
 
