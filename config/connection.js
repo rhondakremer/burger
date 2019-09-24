@@ -5,7 +5,7 @@ var connection;
 if (process.env.JAWSDB_URL) {
   console.log(" Using environment:", process.env.JAWSDB_URL);
   try {
-    connection = mysql.createConnection(process.env.JAWSBD_URL);
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
   }
   catch (error) {
     console.log(error);
