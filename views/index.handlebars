@@ -11,11 +11,14 @@
 <!-- Pass in data from server.js -->
 <div id="tables">
   <div id="uneaten">
-READY TO EAT
+
 <table id="table1">
+  <tr>
+    <th>Burgers ready to eat!</th>
+  </tr>
   {{#each burgers}}
   {{#unless devoured}}
-
+ 
   <tr>
     <td>{{this.burger_name}}
       <button data-id="{{this.id}}" class="devour">Devour</button>
@@ -26,14 +29,17 @@ READY TO EAT
 </table>
 </div>
 <div id="eaten">
-EATEN
+
 <table id="table2">
+  <tr>
+    <th>Burgers you enjoyed</th>
+  </tr>
   {{#each burgers}}
   {{#if devoured}}
-
+  
   <tr>
     <td>{{this.burger_name}}
-      <button data-id="{{this.id}}" class="devour">Devour</button>
+      <button data-id="{{this.id}}" class="delete">Delete</button>
     </td>
   </tr>
   {{/if}}

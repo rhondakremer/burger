@@ -17,7 +17,13 @@ updateOne: function(tableName, devouredColumn, devouredState, burgerID, cb) {
     orm.updateOne(tableName, devouredColumn, devouredState, burgerID, function(res) {
       cb(res);
     });
-  }
+  },
+
+deleteOne: function(tableName, burgerID, cb) {
+  orm.deleteOne(tableName, burgerID, function(res) {
+    cb(res);
+  })
+}
 };
 
 // Export the database functions for the controller (catsController.js).

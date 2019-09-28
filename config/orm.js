@@ -58,6 +58,20 @@ updateOne: function(tableName, devouredColumn, devouredState, burgerID) {
       if (err) throw err;
       console.log(result);
     });
+  },
+
+  deleteOne: function(tableName, burgerID) {
+    var queryString = "DELETE FROM ?? WHERE id=?";
+
+    console.log(queryString);
+
+    connection.query(queryString, [tableName, burgerID], function(
+      err,
+      result
+    ) {
+      if (err) throw err;
+      console.log(result);
+    });
   }
 };
 
